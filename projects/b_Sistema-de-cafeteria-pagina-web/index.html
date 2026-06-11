@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sistema de Cafetería</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <nav class="menu-lateral" id="menu-lateral">
+            <div class="menu-header">
+                <h2>Sistema de Cafetería</h2>
+                <button id="toggle-menu" class="toggle-menu">☰</button>
+            </div>
+            
+            <div class="menu-items">
+                <button class="boton-menu" data-target="clientes-submenu">Clientes</button>
+                <div id="clientes-submenu" class="submenu">
+                    <button class="boton-menu boton-submenu" onclick="mostrarModal('cliente')">Agregar clientes</button>
+                    <button class="boton-menu boton-submenu" onclick="mostrarLista('clientes')">Lista de clientes</button>
+                </div>
+
+                <button class="boton-menu" data-target="productos-submenu">Productos</button>
+                <div id="productos-submenu" class="submenu">
+                    <button class="boton-menu boton-submenu" onclick="mostrarModal('producto')">Agregar productos</button>
+                    <button class="boton-menu boton-submenu" onclick="mostrarLista('productos')">Lista de productos</button>
+                </div>
+
+                <button class="boton-menu" data-target="ordenes-submenu">Órdenes</button>
+                <div id="ordenes-submenu" class="submenu">
+                    <button class="boton-menu boton-submenu" onclick="mostrarModal('orden')">Crear nueva orden</button>
+                    <button class="boton-menu boton-submenu" onclick="mostrarLista('ordenes')">Lista de órdenes</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="contenido-principal">
+            <div class="centro-imagen">
+                <img src="images/cafetera.png" alt="Cafetería" class="imagen-principal">
+            </div>
+            
+            <div id="lista-contenedor" class="lista-responsive"></div>
+        </div>
+    </div>
+
+    <!-- Modales -->
+    <div id="modal-cliente" class="modal">
+        <div class="modal-contenido">
+            <h2>Nuevo Cliente</h2>
+            <form id="form-cliente" onsubmit="event.preventDefault(); guardarCliente();">
+                <input type="text" placeholder="Nombre" id="nombre-cliente" required>
+                <input type="tel" placeholder="Teléfono" id="telefono-cliente" required>
+                <input type="email" placeholder="Email" id="email-cliente" required>
+                <input type="text" placeholder="Dirección" id="direccion-cliente" required>
+                <input type="text" placeholder="RFC" id="rfc-cliente" required>
+                <div class="modal-botones">
+                    <button type="submit">Guardar</button>
+                    <button type="button" onclick="ocultarModales()">Cerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-producto" class="modal">
+        <div class="modal-contenido">
+            <h2>Nuevo Producto</h2>
+            <form id="form-producto" onsubmit="event.preventDefault(); guardarProducto();">
+                <input type="number" placeholder="ID" id="id-producto" required>
+                <input type="text" placeholder="Nombre" id="nombre-producto" required>
+                <input type="text" placeholder="Descripción" id="descripcion-producto" required>
+                <input type="number" step="0.01" placeholder="Precio" id="precio-producto" required>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="es-personalizacion">
+                    <label for="es-personalizacion">Es una personalización (Extra)</label>
+                </div>
+                <div class="modal-botones">
+                    <button type="submit">Guardar</button>
+                    <button type="button" onclick="ocultarModales()">Cerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-orden" class="modal">
+        <div class="modal-contenido">
+            <h2>Nueva Orden</h2>
+            <form id="form-orden" onsubmit="event.preventDefault(); guardarOrden();">
+                <input type="number" placeholder="ID Orden" id="id-orden" required>
+                <select id="rfc-orden" required>
+                    <option value="">Seleccione un cliente</option>
+                </select>
+                
+                <h3>Productos</h3>
+                <div id="productos-container">
+                    <div class="producto-item">
+                        <select class="producto-orden" required>
+                            <option value="">Seleccione un producto</option>
+                        </select>
+                        <button type="button" class="eliminar-producto" onclick="eliminarProducto(this)">✖</button>
+                    </div>
+                </div>
+                
+                <button type="button" onclick="agregarProducto()" class="boton-agregar">➕ Agregar otro producto</button>
+                
+                <h3>Personalizaciones</h3>
+                <div id="personalizaciones-container" class="personalizaciones-container">
+                    <!-- Aquí se cargarán las personalizaciones disponibles como checkboxes -->
+                </div>
+                
+                <input type="text" placeholder="Fecha (dd/mm)" id="fecha-orden" required>
+                <div class="modal-botones">
+                    <button type="submit">Guardar</button>
+                    <button type="button" onclick="ocultarModales()">Cerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Notificación -->
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <p id="notification-message"></p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
