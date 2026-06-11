@@ -1,0 +1,25 @@
+/*
+ * fonts-special-local.css
+ * Fuentes especiales locales.
+ *
+ * Ubicación esperada:
+ * css/fonts-special-local.css
+ * css/fonts/Minsk-regular.woff
+ * css/fonts/nulshock bd.woff
+ */
+
+@font-face {
+  font-family: "Minsk";
+  src: url("fonts/Minsk-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nulshock";
+  src: url("fonts/nulshock bd.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,77 @@
+/* ================================
+   FUENTES LOCALES
+   Ruta esperada:
+   css/
+   ├─ tu-archivo.css
+   └─ fonts/
+      ├─ montserrat-thin1.ttf
+      ├─ montserrat-thin2.ttf
+      ├─ montserrat-thin3.ttf
+      ├─ montserrat-thin4.ttf
+      ├─ poppins.ttf
+      ├─ teko-light1.ttf
+      └─ teko-light2.ttf
+================================ */
+
+/* Montserrat Regular / 400 */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/montserrat-thin1.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Montserrat Medium / 500 */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/montserrat-thin2.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Montserrat SemiBold / 600 */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  src: url("fonts/montserrat-thin3.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Montserrat Bold / 700 */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/montserrat-thin4.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Poppins Regular / 400 */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/poppins.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Teko Light / 300 */
+@font-face {
+  font-family: "Teko";
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/teko-light1.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Teko Regular / 400 */
+@font-face {
+  font-family: "Teko";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/teko-light2.ttf") format("truetype");
+  font-display: swap;
+}

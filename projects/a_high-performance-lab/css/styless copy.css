@@ -1,0 +1,242 @@
+/*header*/
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@398..700&display=swap');
+
+*{
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 20px;
+}
+
+
+body
+{
+
+    background-color: #000000;
+
+}
+
+.header{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+}
+
+.header .logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;    
+}
+
+.header .nav-links li:hover,
+/**/.oberleiy a:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: #171717; 
+}
+
+.header .nav-links a:hover{
+    color: #c50000;
+}
+
+
+
+
+
+/**/.meniuu {
+    display:none;
+}
+
+.header .btn button,
+/**/.header .meniuu button{
+    margin-left: 20px;
+    font-weight: 700;
+    color: #eceff1;
+    padding: 9px 25px;
+    background: #1b3039;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s; 
+}
+
+.header .btn button:hover,
+/**/.header .meniuu button:hover{
+    background-color: #161616;
+    color: #c50000;
+    transform: scale(1.1);
+}
+
+
+
+
+/**/@media screen and (max-width: 800px){
+    .nav-links, .btn {
+        display: none;
+    }
+    .meniuu {
+        display: inherit;
+    }
+}
+
+
+
+/*Nav Mobile*/
+
+.header a{
+    text-decoration: none;  
+    /*borramos el que teniamos en .header .nav-links a*/ 
+}
+
+.header .oberlei {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(33, 49, 63, .95);
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+}
+
+.header .oberlei .oberlei-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+
+.header .oberlei a{
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: all 0.3s ease 0s;
+    font-weight: 700;
+    color: #eceff1;
+}
+
+.header .oberlei a:hover, 
+.header .oberlei a:focus{
+    color: #ffbc0e;
+}
+
+.header .oberlei .clouse{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 65px;
+}
+
+
+
+@media screen and (max-height:450px) {
+    .header .oberlei a{
+        font-size: 20px;
+    }
+    .header .oberlei .clouse{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+
+
+
+
+/* newstylecss */
+
+
+/*ignorar
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+}
+
+.container {
+    /* Existing container styles 
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.container::-webkit-scrollbar {
+    width: 10px; /* Adjust scrollbar width as desired 
+}
+
+.container::-webkit-scrollbar-track {
+    background: transparent; /* Hide track background 
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #ffffff00; /* Set scrollbar color 
+    border-radius: 10px; /* Adjust scrollbar corner radius 
+}
+
+section{
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   scroll-snap-align: start;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 4px 7px rgb(160, 3, 3);
+}
+
+.one {
+    background-color: black;
+}
+
+.two {
+    background-color: rgb(23, 23, 23);
+}
+
+.three {
+    background-color: black;
+}
+
+.four {
+    background-color: rgb(23, 23, 23);
+}    
+
+
+      */
+
+

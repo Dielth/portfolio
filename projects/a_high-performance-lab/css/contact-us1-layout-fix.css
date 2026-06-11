@@ -1,0 +1,70 @@
+/*
+ * contact-us1-layout-fix.css
+ * Fix específico para contact-us1.html.
+ *
+ * NO usa las reglas globales agresivas de newwstyle.css.
+ * Objetivo:
+ * - recuperar fondo negro lateral como la versión original;
+ * - hacer visible el texto lateral del formulario;
+ * - evitar solapes por margin-top heredado en .title-classic-text p;
+ * - no afectar otras páginas.
+ */
+
+html,
+body {
+  background: #000000 !important;
+}
+
+/* La sección del formulario debe vivir sobre fondo negro,
+   pero sin forzar todas las secciones del sitio a height:100vh. */
+body > .section.section-sm.section-last.bg-default.text-left {
+  background: #000000 !important;
+  overflow: visible !important;
+}
+
+/* El bloque principal del formulario conserva su layout original,
+   pero permitimos que el texto lateral salga sobre fondo negro. */
+.title-classic {
+  overflow: visible !important;
+  align-items: center !important;
+}
+
+/* Este era el detalle que rompía la lectura:
+   algunos CSS empujaban el párrafo demasiado hacia abajo. */
+.title-classic-text p {
+  margin-top: 0 !important;
+  color: #ffffff !important;
+  line-height: 1.45 !important;
+}
+
+/* Mantiene el separador vertical y el texto lateral visible. */
+.title-classic-text {
+  color: #ffffff !important;
+  overflow: visible !important;
+}
+
+/* Asegura que el título se mantenga blanco sobre el panel oscuro. */
+.title-classic-title h3 {
+  color: #ffffff !important;
+}
+
+/* En pantallas chicas, evita que el texto se monte con el formulario. */
+@media (max-width: 575px) {
+  .title-classic {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  .title-classic-text {
+    border-left: 0 !important;
+    padding-left: 0 !important;
+    border-top: 1px solid #e1e1e1 !important;
+    padding-top: 16px !important;
+  }
+
+  .title-classic-text p {
+    max-width: 280px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
