@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerfilUsuario</title>
+    <style>
+        /* Estilos del perfil de usuario */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #33FFFF;
+            color: rgb(0, 0, 0);
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #34495e;
+            padding: 10px 20px;
+        }
+        nav .menu {
+            display: flex;
+            gap: 20px;
+        }
+        nav .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav .menu a:hover {
+            background-color: #1abc9c;
+        }
+        nav .actions {
+            display: flex;
+            gap: 15px;
+        }
+        nav .actions a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #99FFFF;
+            transition: background-color 0.3s;
+        }
+        nav .actions a:hover {
+            background-color: #33FFFF;
+        }
+
+        .profile-container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .profile-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-header h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #2c3e50;
+        }
+        .profile-header p {
+            margin: 5px 0;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        .profile-section {
+            margin-bottom: 20px;
+        }
+        .profile-section h3 {
+            font-size: 18px;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+        .profile-section p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+
+        /* Para añadir o eliminar las tarjetas agregadas*/
+        .credit-card {
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .credit-card span {
+            font-size: 16px;
+            color: #34495e;
+        }
+        .credit-card button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .credit-card button:hover {
+            background-color: #c0392b;
+        }
+
+        .add-card-btn {
+            display: block;
+            margin: 10px 0;
+            padding: 10px 15px;
+            font-size: 16px;
+            color: white;
+            background-color: #1abc9c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .add-card-btn:hover {
+            background-color: #16a085;
+        }
+
+        /* Ceerrar sessión */
+        .logout-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .logout-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SuperUAQ</h1>
+    </header>
+
+    <nav>
+        <div class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Ofertas</a>
+            <a href="#">Contacto</a>
+        </div>
+        <div class="actions">
+            <a href="profile.html">Perfil</a>
+            <a href="carrito.html">Carrito</a>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <h2>Perfil de Usuario</h2>
+            <p>Bienvenido, Eriksito </p>
+        </div>
+
+        <!-- Datos del usuario -->
+        <div class="profile-section">
+            <h3>Datos Personales</h3>
+            <p><strong>Nombre:</strong> Erik Issay</p>
+            <p><strong>Correo Electrónico:</strong> samplemail67@gmail.com</p>
+            <p><strong>Teléfono:</strong> +52 5653996828</p>
+        </div>
+
+        <!-- Historial de las compras realizadas -->
+        <div class="profile-section">
+            <h3>Historial de Compras</h3>
+            <p>- Compra #12345: $350.00 MXN - 05/12/2024</p>
+            <p>- Compra #12346: $120.00 MXN - 02/12/2024</p>
+            <p>- Compra #12347: $75.00 MXN - 25/11/2024</p>
+        </div>
+
+        <div class="profile-section">
+            <h3>Tarjetas de Crédito</h3>
+
+            <div class="credit-card">
+                <span>**** **** **** 1234</span>
+                <button>Eliminar</button>
+            </div>
+
+            <div class="credit-card">
+                <span>**** **** **** 5678</span>
+                <button>Eliminar</button>
+            </div>
+            <button class="add-card-btn">Agregar Tarjeta</button>
+        </div>
+
+        <button class="logout-btn">Cerrar Sesión</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SuperUAQ</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarritoCompras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #33FFFF;
+            color: rgb(0, 0, 0);
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffa000;
+            padding: 10px 20px;
+        }
+        nav .menu {
+            display: flex;
+            gap: 20px;
+        }
+        nav .menu a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav .menu a:hover {
+            background-color: #1abc9c;
+        }
+        nav .actions {
+            display: flex;
+            gap: 15px;
+        }
+        nav .actions a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #99FFFF;
+            transition: background-color 0.3s;
+        }
+        nav .actions a:hover {
+            background-color: #1abc9c;
+        }
+
+        /* Estilo del carrito */
+        .cart-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .cart-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .cart-items {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .cart-items th, .cart-items td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .cart-items th {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            font-size: 16px;
+        }
+        .cart-items td {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        .cart-items .product-name {
+            font-weight: bold;
+            color: #34495e;
+        }
+        .cart-items img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .cart-items .total-row {
+            font-weight: bold;
+            background-color: #ecf0f1;
+        }
+        .cart-items .actions {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+        .cart-items .actions button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #1abc9c;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .cart-items .actions button:hover {
+            background-color: #16a085;
+        }
+        .checkout-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .credit-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .credit-card img {
+            width: 50px;
+            height: auto;
+        }
+        .checkout-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #1abc9c;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .checkout-btn:hover {
+            background-color: #16a085;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Supermercado Online</h1>
+    </header>
+
+    <nav>
+        <div class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Ofertas</a>
+            <a href="#">Contacto</a>
+        </div>
+        <div class="actions">
+            <a href="profile.html">Perfil</a>
+            <a href="carrito.html">Carrito</a>
+        </div>
+    </nav>
+
+    <!-- Carrito de Compras -->
+    <div class="cart-container">
+        <h2 class="cart-title">Carrito de Compras</h2>
+        <table class="cart-items">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario MX</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="imagenes/manzanas.jpg" alt="Manzanas"></td>
+                    <td class="product-name">Manzanas</td>
+                    <td>2</td>
+                    <td>MX$20</td>
+                    <td>MX$40</td>
+                    <td class="actions">
+                        <button>+</button>
+                        <button>-</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="imagenes/pan-integral.jpg" alt="Pan Integral"></td>
+                    <td class="product-name">Pan Integral</td>
+                    <td>1</td>
+                    <td>MX$56</td>
+                    <td>MX$56</td>
+                    <td class="actions">
+                        <button>+</button>
+                        <button>-</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="imagenes/leche-entera.jpg" alt="Leche Entera"></td>
+                    <td class="product-name">Leche Entera</td>
+                    <td>3</td>
+                    <td>MX$28</td>
+                    <td>MX$84</td>
+                    <td class="actions">
+                        <button>+</button>
+                        <button>-</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td colspan="4">Total</td>
+                    <td colspan="2">MX$180</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="checkout-section">
+            <div class="credit-card">
+                <img src="imagenes/tarjeta-nu.png" alt="Visa">
+                <span>Visa terminación 1234</span>
+            </div>
+            <a href="#" class="checkout-btn">Proceder al Pago</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SuperUAQ</p>
+    </footer>
+
+</body>
+</html>

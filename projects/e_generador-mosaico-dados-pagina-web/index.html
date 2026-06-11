@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Mosaico de Dados</title>
+    <link rel="stylesheet" href="css/style.css" />
+        <link href="images/dado.ico" rel="shortcut icon" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Generador de Mosaico de Dados</h1>
+
+      <div class="controls">
+        <div class="control-group">
+          <label for="imageInput">Imagen:</label>
+          <input type="file" id="imageInput" accept="image/*" />
+        </div>
+
+        <div class="control-group">
+          <label for="detailLevel">Detalle (1-6):</label>
+          <input type="number" id="detailLevel" min="1" max="6" value="3" />
+        </div>
+
+        <div class="control-group">
+          <label for="diceSize">Tamaño del dado (px):</label>
+          <input type="number" id="diceSize" min="5" max="50" value="15" />
+        </div>
+
+        <div class="control-group">
+          <label for="maxWidth">Ancho máximo (px):</label>
+          <input
+            type="number"
+            id="maxWidth"
+            min="100"
+            max="4000"
+            value="1000"
+          />
+        </div>
+
+        <button id="generateBtn">Generar Mosaico</button>
+        <button id="downloadBtn" disabled>Descargar</button>
+      </div>
+
+      <div id="status">Selecciona una imagen y ajusta los parámetros</div>
+
+      <div id="progress-container">
+        <div id="progress-bar"></div>
+      </div>
+
+      <div class="preview-container">
+        <img id="preview-img" alt="Vista previa" />
+      </div>
+
+      <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+        <div class="loading-overlay">
+          <div class="loading-text">Procesando imagen...</div>
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <h3>Instrucciones</h3>
+        <p>1. Selecciona una imagen desde tu dispositivo.</p>
+        <p>
+          2. Ajusta el nivel de detalle (1 = menos detalle, 6 = más detalle).
+        </p>
+        <p>
+          3. Configura el tamaño de cada dado en el mosaico (recomendado:
+          10-20px).
+        </p>
+        <p>
+          4. Establece el ancho máximo del mosaico final (para imágenes
+          grandes).
+        </p>
+        <p>
+          5. Haz clic en "Generar Mosaico" y espera a que se complete el
+          proceso.
+        </p>
+        <p>6. Descarga la imagen resultante si lo deseas.</p>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
